@@ -11,8 +11,9 @@ This module is using PoshSSH to connect
 1. Download the script
 2. Change the script to your desired websites and change the .ZIP url
 3. Change the path of the .TXT file where your log will be
-4. Download & Import PoshSSH (Install-Module -Name Posh-SSH -Force -AllowClobber and Import-Module Posh-SSH)
-5. Run the powershell script as Administrator and let the magic do the work.
+4. Make sure to double check the --path value in the install command, some webservers use another folder for example public or maybe your SSH session will be in the default document root.
+5. Download & Import PoshSSH (Install-Module -Name Posh-SSH -Force -AllowClobber and Import-Module Posh-SSH)
+6. Run the powershell script as Administrator and let the magic do the work.
 It will create a output file named unifi_log.txt to tell you the output of the SSH command
 
 ## 💬 Support
