@@ -22,7 +22,7 @@ Clear-Content -Path $logFile -ErrorAction SilentlyContinue
 
 # Iterate over each site
 foreach ($site in $sites) {
-    $webhost = $site.website  # Corrected to use 'website'
+    $webhost = $site.website  
     $user = $site.User
     $password = $site.Password
 
@@ -30,7 +30,7 @@ foreach ($site in $sites) {
     $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
 
     # Create a new SSH session
-    $session = New-SSHSession -ComputerName $webhost -Credential (New-Object PSCredential ($user, $securePassword)) -AcceptKey -Port 26
+    $session = New-SSHSession -ComputerName $webhost -Credential (New-Object PSCredential ($user, $securePassword)) -AcceptKey -Port 22
 
     if ($session) {
         try {
